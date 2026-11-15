@@ -9,60 +9,161 @@
   <body>
     <!-- Header -->
     <header
-      class="w-full bg-white shadow-md transition-all duration-300 hover:shadow-lg sticky top-0 left-0"
+      class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur-md transition-shadow duration-300"
     >
-      <div class="container-custom py-4 flex items-center justify-between">
+      <div class="container-custom flex items-center justify-between py-4">
         <!-- Brand Logo -->
-        <a href="/" class="site-logo" aria-label="Ace Studios Home">
+        <a
+          href="#home"
+          class="site-logo shrink-0"
+          aria-label="Ace Studios - Home"
+        >
           <img
             src="/dummy-logos.svg"
             alt="Ace Studios"
             width="120"
             height="40"
+            fetchpriority="high"
           />
         </a>
 
-        <!-- Header Navigation -->
+        <!-- Desktop Navigation -->
         <nav
-          class="header-navigation flex items-center gap-6"
+          class="hidden items-center gap-8 lg:flex"
           aria-label="Main navigation"
         >
-          <!-- Contact CTA -->
-          <a href="/contact" class="btn-primary"> Connect with us </a>
+          <a
+            href="#home"
+            class="text-sm font-medium text-gray-700 transition hover:text-[#7055FF]"
+          >
+            Home
+          </a>
 
-          <!-- Menu Toggle -->
+          <a
+            href="#about"
+            class="text-sm font-medium text-gray-700 transition hover:text-[#7055FF]"
+          >
+            About
+          </a>
+
+          <a
+            href="#services"
+            class="text-sm font-medium text-gray-700 transition hover:text-[#7055FF]"
+          >
+            Services
+          </a>
+
+          <a
+            href="#portfolio"
+            class="text-sm font-medium text-gray-700 transition hover:text-[#7055FF]"
+          >
+            Projects
+          </a>
+
+          <a
+            href="#process"
+            class="text-sm font-medium text-gray-700 transition hover:text-[#7055FF]"
+          >
+            Our Process
+          </a>
+
+          <a
+            href="#contact"
+            class="text-sm font-medium text-gray-700 transition hover:text-[#7055FF]"
+          >
+            Contact
+          </a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="flex items-center gap-3">
+          <!-- Contact CTA -->
+          <a
+            href="#contact"
+            class="hidden rounded-xl bg-[#7055FF] px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-[#5B40E8] sm:inline-flex"
+          >
+            Connect with us
+            <span class="ml-2" aria-hidden="true">↗</span>
+          </a>
+
+          <!-- Mobile Menu Toggle -->
           <button
             type="button"
-            class="cursor-pointer"
             id="menu-toggle"
+            class="flex h-11 w-11 items-center justify-center rounded-lg border border-gray-200 transition hover:bg-gray-50 lg:hidden"
             aria-label="Open navigation menu"
             aria-expanded="false"
             aria-controls="mobile-menu"
           >
             <img
+              id="menu-icon"
               src="/src/assets/icons/menu.svg"
               alt=""
-              width="48"
-              height="48"
+              width="24"
+              height="24"
               aria-hidden="true"
             />
           </button>
-        </nav>
+        </div>
       </div>
+
+      <!-- Mobile Navigation -->
+      <nav
+        id="mobile-menu"
+        class="hidden border-t border-gray-100 bg-white px-5 py-5 lg:hidden"
+        aria-label="Mobile navigation"
+        inert
+      >
+        <ul class="flex flex-col gap-1">
+          <li>
+            <a href="#home" class="mobile-nav-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="mobile-nav-link">About</a>
+          </li>
+
+          <li>
+            <a href="#services" class="mobile-nav-link">Services</a>
+          </li>
+
+          <li>
+            <a href="#portfolio" class="mobile-nav-link">Projects</a>
+          </li>
+
+          <li>
+            <a href="#process" class="mobile-nav-link">Our Process</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <a
+          href="#contact"
+          class="mt-4 flex w-full items-center justify-center rounded-xl bg-[#7055FF] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#5B40E8]"
+        >
+          Connect with us
+          <span class="ml-2" aria-hidden="true">↗</span>
+        </a>
+      </nav>
     </header>
 
     <!-- Main Content -->
     <main>
       <!-- Hero Section -->
+
+      <!-- Hero Section -->
       <section
-        class="hero-section relative overflow-hidden bg-[#f9f9fb] px-4 md:px-6"
+        class="hero-section relative isolate overflow-hidden bg-[#f9f9fb] px-4 sm:px-6 lg:px-8"
         aria-labelledby="hero-title"
       >
         <div
-          class="container-custom grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16 py-14 sm:py-16 lg:py-20 lg:min-h-[calc(100svh-80px)] bg-[url('/src/assets/hero/hero-pattern.svg')] bg-no-repeat bg-center bg-contain"
+          class="container-custom relative grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-10 xl:gap-16 py-14 sm:py-16 lg:py-20 lg:min-h-[calc(100svh-80px)] bg-[url('/src/assets/hero/hero-pattern.svg')] bg-no-repeat bg-center bg-contain"
         >
           <!-- Hero Content -->
-          <div class="hero-content flex flex-col items-start gap-5">
+          <div class="hero-content flex flex-col items-start gap-5 sm:gap-6">
             <!-- Hero Badge -->
             <span class="hero-badge">
               <span class="badge-dot" aria-hidden="true"></span>
@@ -72,14 +173,14 @@
             <!-- Main Heading -->
             <h1
               id="hero-title"
-              class="max-w-2xl text-4xl sm:text-5xl xl:text-6xl font-bold tracking-tight leading-tight"
+              class="max-w-2xl text-4xl sm:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12]"
             >
               We Build Digital Experiences That Make Brands Stand Out.
             </h1>
 
             <!-- Hero Description -->
             <p
-              class="max-w-xl text-sm sm:text-base text-gray-500 leading-relaxed"
+              class="max-w-xl text-sm sm:text-base lg:text-lg text-gray-500 leading-relaxed"
             >
               We help businesses grow with modern website design, development
               and digital solutions. From stunning landing pages to powerful
@@ -88,22 +189,64 @@
             </p>
 
             <!-- Hero CTA -->
-            <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-2">
+            <div
+              class="flex flex-col xs:flex-row sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto"
+            >
               <a href="/contact" class="btn-primary"> Connect With Us </a>
 
               <a
                 href="/work"
-                class="font-semibold text-primary hover:opacity-75 transition-opacity duration-300"
+                class="inline-flex items-center justify-center gap-2 font-semibold text-primary hover:opacity-75 transition-opacity duration-300"
               >
                 Browse Our Works
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" />
+                </svg>
               </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div
+              class="flex flex-wrap items-center gap-x-6 gap-y-4 pt-5 mt-2 border-t border-gray-200 w-full max-w-xl"
+            >
+              <!-- Client Satisfaction -->
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-1">
+                  <span class="text-yellow-500" aria-hidden="true">★★★★★</span>
+                  <span class="text-sm font-bold text-gray-900">5.0</span>
+                </div>
+                <span class="text-xs text-gray-500">Client satisfaction</span>
+              </div>
+
+              <!-- Divider -->
+              <span class="h-10 w-px bg-gray-200" aria-hidden="true"></span>
+
+              <!-- Services -->
+              <div class="flex flex-col gap-1">
+                <span class="text-sm font-bold text-gray-900"
+                  >Creative & Digital</span
+                >
+                <span class="text-xs text-gray-500">Design & Development</span>
+              </div>
             </div>
           </div>
 
           <!-- Hero Visual -->
           <figure
-            class="hero-visual relative flex items-center justify-center w-full"
+            class="hero-visual relative flex items-center justify-center w-full min-w-0 mx-auto"
           >
+            <!-- Illustration -->
             <img
               src="/src/assets/hero/hero-chat-illustration.svg"
               alt=""
@@ -111,13 +254,3342 @@
               width="500"
               height="485"
               fetchpriority="high"
-              class="w-full max-w-125 h-auto object-contain"
+              class="block w-full max-w-[500px] h-auto object-contain"
             />
 
-            <!-- Contact form overlay will go here -->
+            <!-- Contact Form Overlay -->
+            <div
+              class="hero-form absolute inset-0 z-10 flex items-center justify-center"
+            >
+              <!-- Add your contact form here -->
+            </div>
           </figure>
         </div>
       </section>
+
+      <!-- Tailwind CSS CDN: include in your HTML head -->
+      <script src="https://cdn.tailwindcss.com"></script>
+
+      <!-- Services Section -->
+      <section
+        id="services"
+        class="relative overflow-hidden bg-[#F8F8FA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+        aria-labelledby="services-heading"
+      >
+        <!-- Decorative Elements -->
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute -right-16 top-20 h-52 w-52 rounded-full bg-[#7055FF]/10 blur-2xl"
+        ></div>
+
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute -left-12 bottom-20 h-40 w-40 rounded-full bg-[#FFD900]/20 blur-2xl"
+        ></div>
+
+        <div class="relative mx-auto max-w-7xl">
+          <!-- Section Header -->
+          <header
+            class="mb-14 flex flex-col gap-8 lg:mb-16 lg:flex-row lg:items-end lg:justify-between"
+          >
+            <div class="max-w-3xl">
+              <div
+                class="mb-6 inline-flex items-center gap-3 rounded-full bg-[#E9E9ED] px-4 py-2"
+              >
+                <span class="h-3 w-3 rounded-full bg-[#FFD900]"></span>
+
+                <span class="text-sm font-semibold text-gray-900">
+                  WHAT WE DO
+                </span>
+              </div>
+
+              <h2
+                id="services-heading"
+                class="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight text-black sm:text-5xl lg:text-6xl"
+              >
+                Digital Solutions
+                <span class="text-[#7055FF]">Built to Make</span>
+                Your Business Stand Out.
+              </h2>
+            </div>
+
+            <div class="max-w-md lg:pb-2">
+              <p class="text-base leading-8 text-gray-500 sm:text-lg">
+                From powerful websites to intelligent AI solutions, we build
+                digital products that help businesses grow, connect and move
+                forward.
+              </p>
+
+              <a
+                href="#contact"
+                class="mt-5 inline-flex items-center gap-2 font-semibold text-black transition-colors hover:text-[#7055FF]"
+              >
+                Let's discuss your project
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </header>
+
+          <!-- Services Grid -->
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- Service 01 -->
+            <article
+              class="group relative flex min-h-[310px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+            >
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-400">01 / 08</span>
+
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-colors group-hover:bg-[#7055FF] group-hover:text-white"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="16"
+                      rx="2"
+                      stroke-width="1.8"
+                    />
+                    <path d="M3 9h18M8 4v5m8-5v5" stroke-width="1.8" />
+                    <path
+                      d="M7 14h4m-4 3h10"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Web Development
+              </h3>
+
+              <p class="mb-7 flex-1 text-sm leading-7 text-gray-500">
+                Modern, responsive and SEO-friendly websites designed to
+                establish your online presence and turn visitors into customers.
+              </p>
+
+              <a
+                href="/web-development/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#7055FF]"
+              >
+                Explore Service <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Service 02 -->
+            <article
+              class="group relative flex min-h-[310px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+            >
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-400">02 / 08</span>
+
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E9952D]/10 text-[#E9952D] transition-colors group-hover:bg-[#E9952D] group-hover:text-white"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 3h2l2.4 12.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L22 8H6"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="10" cy="20" r="1.5" stroke-width="1.8" />
+                    <circle cx="18" cy="20" r="1.5" stroke-width="1.8" />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                E-commerce Development
+              </h3>
+
+              <p class="mb-7 flex-1 text-sm leading-7 text-gray-500">
+                Feature-rich online stores with secure payments, product
+                management and seamless shopping experiences for your customers.
+              </p>
+
+              <a
+                href="/ecommerce-development/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#E9952D]"
+              >
+                Explore Service <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Service 03 -->
+            <article
+              class="group relative flex min-h-[310px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+            >
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-400">03 / 08</span>
+
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-colors group-hover:bg-[#7055FF] group-hover:text-white"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="16"
+                      rx="2"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M3 9h18M7 13h4m-4 3h7m3-3h1"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Backend Portal Development
+              </h3>
+
+              <p class="mb-7 flex-1 text-sm leading-7 text-gray-500">
+                Secure backend portals, admin panels, dashboards and business
+                management systems built around your workflow.
+              </p>
+
+              <a
+                href="/backend-portal-development/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#7055FF]"
+              >
+                Explore Service <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Service 04 -->
+            <article
+              class="group relative flex min-h-[310px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+            >
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-400">04 / 08</span>
+
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E9952D]/10 text-[#E9952D] transition-colors group-hover:bg-[#E9952D] group-hover:text-white"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 3v18M3 12h18"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M5 5h4v4H5zm10 10h4v4h-4z"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                WordPress Development
+              </h3>
+
+              <p class="mb-7 flex-1 text-sm leading-7 text-gray-500">
+                Custom WordPress websites, themes and plugins that give you
+                flexibility, control and easy content management.
+              </p>
+
+              <a
+                href="/wordpress-development/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#E9952D]"
+              >
+                Explore Service <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Service 05 -->
+            <article
+              class="group relative flex min-h-[310px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+            >
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-400">05 / 08</span>
+
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E9952D]/10 text-[#E9952D] transition-colors group-hover:bg-[#E9952D] group-hover:text-white"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.8" />
+                    <path
+                      d="m15.5 15.5 5 5M8 10.5h5m-2.5-2.5v5"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                SEO & Optimization
+              </h3>
+
+              <p class="mb-7 flex-1 text-sm leading-7 text-gray-500">
+                Technical SEO, on-page optimization and performance improvements
+                to help your website become more search-friendly.
+              </p>
+
+              <a
+                href="/seo-services/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#E9952D]"
+              >
+                Explore Service <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Service 06 -->
+            <article
+              class="group relative flex min-h-[310px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+            >
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-400">06 / 08</span>
+
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-colors group-hover:bg-[#7055FF] group-hover:text-white"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="3"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M8 8h8v8H8zM3 9h5m8 6h5M9 3v5m6 8v5"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Custom Web Applications
+              </h3>
+
+              <p class="mb-7 flex-1 text-sm leading-7 text-gray-500">
+                Tailor-made web applications, CRM, ERP and custom software
+                solutions that simplify complex business operations.
+              </p>
+
+              <a
+                href="/custom-web-applications/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#7055FF]"
+              >
+                Explore Service <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Service 07 -->
+            <article
+              class="group relative flex min-h-[310px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+            >
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-400">07 / 08</span>
+
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-colors group-hover:bg-[#7055FF] group-hover:text-white"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="6"
+                      y="2"
+                      width="12"
+                      height="20"
+                      rx="2"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M10 5h4m-4 13h4"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Android App Development
+              </h3>
+
+              <p class="mb-7 flex-1 text-sm leading-7 text-gray-500">
+                User-friendly Android applications designed to bring your
+                business services directly to your customers' devices.
+              </p>
+
+              <a
+                href="/android-app-development/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#7055FF]"
+              >
+                Explore Service <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Service 08 -->
+            <article
+              class="group relative flex min-h-[310px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+            >
+              <div class="mb-8 flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-400">08 / 08</span>
+
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E9952D]/10 text-[#E9952D] transition-colors group-hover:bg-[#E9952D] group-hover:text-white"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 3a8 8 0 0 0-8 8v3a3 3 0 0 0 3 3h1v-6H5m14 0h-3v6h1a3 3 0 0 0 3-3v-3a8 8 0 0 0-8-8z"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 20h6m-6-4v4m6-4v4"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                AI Chatbot Development
+              </h3>
+
+              <p class="mb-7 flex-1 text-sm leading-7 text-gray-500">
+                Intelligent AI chatbots and automated customer support solutions
+                that help businesses engage customers efficiently.
+              </p>
+
+              <a
+                href="/ai-chatbot-development/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#E9952D]"
+              >
+                Explore Service <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div
+            class="relative mt-10 flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl bg-[#7055FF] p-8 sm:p-10 md:flex-row md:items-center"
+          >
+            <div class="relative z-10 max-w-2xl">
+              <span class="mb-3 block text-sm font-medium text-white/70">
+                HAVE A PROJECT IN MIND?
+              </span>
+
+              <h3
+                class="text-2xl font-bold leading-tight text-white sm:text-3xl"
+              >
+                Let's build something amazing together.
+              </h3>
+
+              <p class="mt-3 text-sm leading-7 text-white/75">
+                Tell us about your idea. We'll help you turn it into a digital
+                solution.
+              </p>
+            </div>
+
+            <a
+              href="#contact"
+              class="relative z-10 inline-flex shrink-0 items-center gap-3 rounded-full bg-[#FFD900] px-7 py-4 font-bold text-black transition-all hover:-translate-y-1 hover:bg-white"
+            >
+              Start a Project
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+
+            <div
+              aria-hidden="true"
+              class="absolute -right-10 -top-20 h-56 w-56 rounded-full border-[35px] border-white/10"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Projects Section -->
+      <section
+        id="portfolio"
+        class="bg-[#F8F8FA] px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+        aria-labelledby="projects-title"
+      >
+        <div class="mx-auto max-w-7xl">
+          <!-- Section Header -->
+          <div
+            class="mb-12 flex flex-col gap-5 md:mb-16 md:flex-row md:items-end md:justify-between"
+          >
+            <div class="max-w-2xl">
+              <span
+                class="mb-4 inline-flex items-center gap-2 rounded-full bg-[#7055FF]/10 px-4 py-2 text-sm font-semibold text-[#7055FF]"
+              >
+                <span class="h-2 w-2 rounded-full bg-[#7055FF]"></span>
+                Our Portfolio
+              </span>
+
+              <h2
+                id="projects-title"
+                class="text-3xl font-bold tracking-tight text-[#171717] sm:text-4xl lg:text-5xl"
+              >
+                Projects That Turn
+                <span class="text-[#7055FF]">Ideas Into Reality.</span>
+              </h2>
+
+              <p
+                class="mt-5 max-w-xl text-base leading-7 text-gray-600 sm:text-lg"
+              >
+                Explore a selection of digital experiences we've worked on, from
+                modern websites to powerful business applications.
+              </p>
+            </div>
+
+            <a
+              href="#contact"
+              class="inline-flex w-fit items-center gap-2 rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#7055FF]"
+            >
+              Start Your Project
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:gap-8">
+            <!-- Project 1 -->
+            <article
+              class="group overflow-hidden rounded-3xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <a
+                href="#contact"
+                class="relative block aspect-[16/10] overflow-hidden bg-[#EAE6FF]"
+                aria-label="Discuss a similar e-commerce project"
+              >
+                <img
+                  src="/images/project-ecommerce.webp"
+                  alt="E-commerce website design project"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width="800"
+                  height="500"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-[#7055FF]"
+                >
+                  E-commerce
+                </span>
+              </a>
+
+              <div class="p-6 sm:p-8">
+                <div class="mb-3 flex flex-wrap gap-2">
+                  <span
+                    class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    >Web Development</span
+                  >
+                  <span
+                    class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    >UI/UX</span
+                  >
+                </div>
+
+                <h3 class="text-xl font-bold text-[#171717] sm:text-2xl">
+                  Modern E-commerce Platform
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
+                  A clean and user-friendly online shopping experience designed
+                  to help businesses showcase and sell their products.
+                </p>
+
+                <a
+                  href="#contact"
+                  class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#7055FF] transition group-hover:gap-3"
+                >
+                  Discuss a Similar Project
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article
+              class="group overflow-hidden rounded-3xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <a
+                href="#contact"
+                class="relative block aspect-[16/10] overflow-hidden bg-[#FFF0DC]"
+                aria-label="Discuss a similar business website project"
+              >
+                <img
+                  src="/images/project-business.webp"
+                  alt="Business website design project"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width="800"
+                  height="500"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-[#D17A16]"
+                >
+                  Business Website
+                </span>
+              </a>
+
+              <div class="p-6 sm:p-8">
+                <div class="mb-3 flex flex-wrap gap-2">
+                  <span
+                    class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    >WordPress</span
+                  >
+                  <span
+                    class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    >SEO</span
+                  >
+                </div>
+
+                <h3 class="text-xl font-bold text-[#171717] sm:text-2xl">
+                  Professional Business Website
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
+                  A responsive business website with clear messaging, service
+                  pages and an easy-to-use contact experience.
+                </p>
+
+                <a
+                  href="#contact"
+                  class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#7055FF] transition group-hover:gap-3"
+                >
+                  Discuss a Similar Project
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article
+              class="group overflow-hidden rounded-3xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <a
+                href="#contact"
+                class="relative block aspect-[16/10] overflow-hidden bg-[#E0F2EC]"
+                aria-label="Discuss a similar web application project"
+              >
+                <img
+                  src="/images/project-dashboard.webp"
+                  alt="Business dashboard and web application interface"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width="800"
+                  height="500"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-emerald-700"
+                >
+                  Web Application
+                </span>
+              </a>
+
+              <div class="p-6 sm:p-8">
+                <div class="mb-3 flex flex-wrap gap-2">
+                  <span
+                    class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    >React.js</span
+                  >
+                  <span
+                    class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    >Laravel</span
+                  >
+                </div>
+
+                <h3 class="text-xl font-bold text-[#171717] sm:text-2xl">
+                  Business Management Dashboard
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
+                  A centralized dashboard concept for managing business
+                  operations, information and everyday workflows.
+                </p>
+
+                <a
+                  href="#contact"
+                  class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#7055FF] transition group-hover:gap-3"
+                >
+                  Discuss a Similar Project
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article
+              class="group overflow-hidden rounded-3xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <a
+                href="#contact"
+                class="relative block aspect-[16/10] overflow-hidden bg-[#FCE7ED]"
+                aria-label="Discuss a similar mobile app project"
+              >
+                <img
+                  src="/images/project-mobile-app.webp"
+                  alt="Mobile application interface design"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width="800"
+                  height="500"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-pink-700"
+                >
+                  Mobile App
+                </span>
+              </a>
+
+              <div class="p-6 sm:p-8">
+                <div class="mb-3 flex flex-wrap gap-2">
+                  <span
+                    class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    >Android</span
+                  >
+                  <span
+                    class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    >App Development</span
+                  >
+                </div>
+
+                <h3 class="text-xl font-bold text-[#171717] sm:text-2xl">
+                  Mobile App Experience
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
+                  A mobile-first application concept focused on simple
+                  navigation and a smooth user experience.
+                </p>
+
+                <a
+                  href="#contact"
+                  class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#7055FF] transition group-hover:gap-3"
+                >
+                  Discuss a Similar Project
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div
+            class="mt-12 rounded-3xl bg-[#7055FF] px-6 py-9 text-center sm:px-10 sm:py-12"
+          >
+            <h3 class="text-2xl font-bold text-white sm:text-3xl">
+              Have an Idea for Your Next Project?
+            </h3>
+
+            <p
+              class="mx-auto mt-3 max-w-xl text-sm leading-7 text-white/80 sm:text-base"
+            >
+              Let's work together to build something meaningful for your
+              business.
+            </p>
+
+            <a
+              href="#contact"
+              class="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#FFD900] px-7 py-3.5 text-sm font-bold text-[#171717] transition hover:bg-white"
+            >
+              Let's Talk
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section
+        id="about"
+        class="relative overflow-hidden bg-[#F8F8FA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+        aria-labelledby="about-heading"
+      >
+        <div class="relative mx-auto max-w-7xl">
+          <div
+            class="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20"
+          >
+            <!-- Left: About Content -->
+            <div class="relative z-10">
+              <!-- Eyebrow -->
+              <div
+                class="mb-6 inline-flex items-center gap-3 rounded-full bg-[#E9E9ED] px-4 py-2"
+              >
+                <span class="h-3 w-3 rounded-full bg-[#FFD900]"></span>
+                <span class="text-sm font-semibold text-gray-900">
+                  ABOUT OUR COMPANY
+                </span>
+              </div>
+
+              <!-- Heading -->
+              <h2
+                id="about-heading"
+                class="max-w-xl text-4xl font-bold leading-[1.12] tracking-tight text-black sm:text-5xl lg:text-6xl"
+              >
+                We Turn Ideas Into
+                <span class="text-[#7055FF]">Digital Solutions</span>
+                That Matter.
+              </h2>
+
+              <!-- Description -->
+              <div
+                class="mt-7 max-w-xl space-y-5 text-base leading-8 text-gray-500 sm:text-lg"
+              >
+                <p>
+                  We are a digital development agency focused on helping
+                  businesses build, improve and grow their online presence
+                  through modern technology and thoughtful digital solutions.
+                </p>
+
+                <p>
+                  From professional websites and e-commerce platforms to custom
+                  web applications, Android apps and AI-powered chatbots, we
+                  turn business requirements into practical digital experiences.
+                </p>
+
+                <p>
+                  Our approach combines creative thinking, reliable development
+                  and a focus on performance to create solutions that support
+                  your business goals.
+                </p>
+              </div>
+
+              <!-- Key Points -->
+              <ul class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <li class="flex items-center gap-3">
+                  <span
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#7055FF]/10 text-[#7055FF]"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="m5 12 4 4L19 6"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-sm font-semibold text-gray-800">
+                    Business-Focused Solutions
+                  </span>
+                </li>
+
+                <li class="flex items-center gap-3">
+                  <span
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#7055FF]/10 text-[#7055FF]"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="m5 12 4 4L19 6"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-sm font-semibold text-gray-800">
+                    Modern Technology
+                  </span>
+                </li>
+
+                <li class="flex items-center gap-3">
+                  <span
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#7055FF]/10 text-[#7055FF]"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="m5 12 4 4L19 6"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-sm font-semibold text-gray-800">
+                    Scalable Development
+                  </span>
+                </li>
+
+                <li class="flex items-center gap-3">
+                  <span
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#7055FF]/10 text-[#7055FF]"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="m5 12 4 4L19 6"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-sm font-semibold text-gray-800">
+                    Client-Focused Approach
+                  </span>
+                </li>
+              </ul>
+
+              <!-- CTA -->
+              <div class="mt-10 flex flex-wrap items-center gap-5">
+                <a
+                  href="/about/"
+                  class="inline-flex items-center gap-3 rounded-full bg-[#7055FF] px-7 py-4 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#5D43E8] hover:shadow-lg hover:shadow-[#7055FF]/20"
+                >
+                  Discover More
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+
+                <a
+                  href="#contact"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-colors hover:text-[#7055FF]"
+                >
+                  Let's Talk
+                  <span aria-hidden="true">&nearr;</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Creative Visual -->
+            <div class="relative mx-auto w-full max-w-[560px]">
+              <div class="relative aspect-square">
+                <!-- Background Circle -->
+                <div
+                  aria-hidden="true"
+                  class="absolute right-[4%] top-[5%] h-[72%] w-[72%] rounded-full bg-[#7055FF]"
+                ></div>
+
+                <!-- Orange Shape -->
+                <div
+                  aria-hidden="true"
+                  class="absolute bottom-[2%] left-[3%] h-[58%] w-[58%] rounded-full bg-[#E9952D]"
+                ></div>
+
+                <!-- Yellow Circle -->
+                <div
+                  aria-hidden="true"
+                  class="absolute right-[4%] top-[3%] h-[35%] w-[35%] rounded-full bg-[#FFD900]"
+                ></div>
+
+                <!-- Central White Card -->
+                <div
+                  class="absolute left-[16%] top-[23%] flex h-[54%] w-[68%] flex-col justify-between rounded-[2rem] border border-white/70 bg-white/90 p-6 shadow-2xl shadow-black/10 backdrop-blur-md sm:p-8"
+                >
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="text-xs font-bold tracking-[0.2em] text-gray-400"
+                    >
+                      OUR APPROACH
+                    </span>
+
+                    <span class="h-3 w-3 rounded-full bg-[#FFD900]"></span>
+                  </div>
+
+                  <div>
+                    <p
+                      class="text-3xl font-bold leading-tight tracking-tight text-black sm:text-4xl"
+                    >
+                      Think.
+                      <span class="text-[#7055FF]">Build.</span>
+                      Grow.
+                    </p>
+
+                    <p
+                      class="mt-4 max-w-[230px] text-sm leading-6 text-gray-500"
+                    >
+                      Turning business ideas into meaningful digital
+                      experiences.
+                    </p>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <span class="h-2 w-10 rounded-full bg-[#7055FF]"></span>
+                    <span class="h-2 w-5 rounded-full bg-[#FFD900]"></span>
+                    <span class="h-2 w-5 rounded-full bg-[#E9952D]"></span>
+                  </div>
+                </div>
+
+                <!-- Floating Decorative Elements -->
+                <div
+                  aria-hidden="true"
+                  class="absolute left-[5%] top-[12%] h-10 w-10 rounded-full border-[8px] border-[#7055FF]"
+                ></div>
+
+                <div
+                  aria-hidden="true"
+                  class="absolute bottom-[12%] right-[5%] h-8 w-8 rounded-full border-[7px] border-white"
+                ></div>
+
+                <div
+                  aria-hidden="true"
+                  class="absolute right-[8%] top-[48%] text-5xl font-bold text-[#7055FF]"
+                >
+                  +
+                </div>
+
+                <div
+                  aria-hidden="true"
+                  class="absolute bottom-[8%] left-[10%] text-5xl font-bold text-[#FFD900]"
+                >
+                  +
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Values -->
+          <div
+            class="mt-20 grid grid-cols-1 gap-5 border-t border-gray-200 pt-10 sm:grid-cols-3 lg:mt-28"
+          >
+            <article class="flex gap-4">
+              <span
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-xl font-bold text-[#7055FF]"
+              >
+                01
+              </span>
+              <div>
+                <h3 class="font-bold text-gray-950">Understand</h3>
+                <p class="mt-2 text-sm leading-6 text-gray-500">
+                  We understand your business, challenges and project
+                  requirements before building.
+                </p>
+              </div>
+            </article>
+
+            <article class="flex gap-4">
+              <span
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#FFD900]/20 text-xl font-bold text-gray-900"
+              >
+                02
+              </span>
+              <div>
+                <h3 class="font-bold text-gray-950">Create</h3>
+                <p class="mt-2 text-sm leading-6 text-gray-500">
+                  We design and develop practical digital solutions around your
+                  business goals.
+                </p>
+              </div>
+            </article>
+
+            <article class="flex gap-4">
+              <span
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#E9952D]/10 text-xl font-bold text-[#E9952D]"
+              >
+                03
+              </span>
+              <div>
+                <h3 class="font-bold text-gray-950">Deliver</h3>
+                <p class="mt-2 text-sm leading-6 text-gray-500">
+                  We help you launch reliable solutions built for usability and
+                  future growth.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Process Section -->
+      <section
+        id="process"
+        class="relative overflow-hidden bg-[#F8F8FA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+        aria-labelledby="process-heading"
+      >
+        <div class="relative mx-auto max-w-7xl">
+          <!-- Decorative Elements -->
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-20 top-10 h-56 w-56 rounded-full bg-[#7055FF]/10 blur-3xl"
+          ></div>
+
+          <!-- Section Header -->
+          <header class="mx-auto mb-16 max-w-3xl text-center">
+            <div
+              class="mb-6 inline-flex items-center gap-3 rounded-full bg-[#E9E9ED] px-4 py-2"
+            >
+              <span class="h-3 w-3 rounded-full bg-[#FFD900]"></span>
+              <span class="text-sm font-semibold text-gray-900">
+                HOW WE WORK
+              </span>
+            </div>
+
+            <h2
+              id="process-heading"
+              class="text-4xl font-bold leading-[1.12] tracking-tight text-black sm:text-5xl lg:text-6xl"
+            >
+              From First Idea to
+              <span class="text-[#7055FF]">Final Launch.</span>
+            </h2>
+
+            <p
+              class="mx-auto mt-6 max-w-2xl text-base leading-8 text-gray-500 sm:text-lg"
+            >
+              Great digital solutions start with a clear process. We keep every
+              step simple, transparent and focused on bringing your business
+              vision to life.
+            </p>
+          </header>
+
+          <!-- Process Timeline -->
+          <div class="relative">
+            <!-- Desktop Connecting Line -->
+            <div
+              aria-hidden="true"
+              class="absolute left-[10%] right-[10%] top-12 hidden h-[2px] bg-gradient-to-r from-[#7055FF]/20 via-[#7055FF] to-[#E9952D]/30 lg:block"
+            ></div>
+
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+              <!-- Step 01 -->
+              <article
+                class="group relative rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+              >
+                <div
+                  class="relative z-10 mb-8 flex items-center justify-between"
+                >
+                  <span class="text-sm font-bold tracking-wider text-gray-400">
+                    STEP 01
+                  </span>
+
+                  <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7055FF] text-white shadow-lg shadow-[#7055FF]/20 transition-transform duration-300 group-hover:rotate-6"
+                  >
+                    <svg
+                      class="h-7 w-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <circle cx="11" cy="11" r="7" stroke-width="1.8" />
+                      <path
+                        d="m16 16 4 4M8 11h6m-3-3v6"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold text-gray-950">
+                  Discovery & Consultation
+                </h3>
+
+                <p class="text-sm leading-7 text-gray-500">
+                  We start by understanding your business, goals, challenges and
+                  project requirements to identify the right solution.
+                </p>
+
+                <div class="mt-7 flex items-center gap-2">
+                  <span class="h-1.5 w-8 rounded-full bg-[#7055FF]"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                </div>
+              </article>
+
+              <!-- Step 02 -->
+              <article
+                class="group relative rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+              >
+                <div
+                  class="relative z-10 mb-8 flex items-center justify-between"
+                >
+                  <span class="text-sm font-bold tracking-wider text-gray-400">
+                    STEP 02
+                  </span>
+
+                  <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FFD900] text-gray-950 shadow-lg shadow-[#FFD900]/20 transition-transform duration-300 group-hover:rotate-6"
+                  >
+                    <svg
+                      class="h-7 w-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 5h16v14H4zM8 9h8M8 13h5m-5 3h7"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold text-gray-950">
+                  Strategy & Planning
+                </h3>
+
+                <p class="text-sm leading-7 text-gray-500">
+                  We define the project scope, features, technology, timeline
+                  and a clear plan before development begins.
+                </p>
+
+                <div class="mt-7 flex items-center gap-2">
+                  <span class="h-1.5 w-8 rounded-full bg-[#FFD900]"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                </div>
+              </article>
+
+              <!-- Step 03 -->
+              <article
+                class="group relative rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+              >
+                <div
+                  class="relative z-10 mb-8 flex items-center justify-between"
+                >
+                  <span class="text-sm font-bold tracking-wider text-gray-400">
+                    STEP 03
+                  </span>
+
+                  <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-transform duration-300 group-hover:rotate-6"
+                  >
+                    <svg
+                      class="h-7 w-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 5h16v14H4zM8 9h8M8 13h4m-4 3h7"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="m16 12 2 2 3-4"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold text-gray-950">
+                  Design & Development
+                </h3>
+
+                <p class="text-sm leading-7 text-gray-500">
+                  Our team brings your ideas to life with thoughtful design,
+                  clean development and the right technology.
+                </p>
+
+                <div class="mt-7 flex items-center gap-2">
+                  <span class="h-1.5 w-8 rounded-full bg-[#7055FF]"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                </div>
+              </article>
+
+              <!-- Step 04 -->
+              <article
+                class="group relative rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+              >
+                <div
+                  class="relative z-10 mb-8 flex items-center justify-between"
+                >
+                  <span class="text-sm font-bold tracking-wider text-gray-400">
+                    STEP 04
+                  </span>
+
+                  <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E9952D]/10 text-[#E9952D] transition-transform duration-300 group-hover:rotate-6"
+                  >
+                    <svg
+                      class="h-7 w-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 5h16v12H4zM8 21h8m-4-4v4"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="m8 11 2.5 2.5L16 8"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold text-gray-950">
+                  Testing & Refinement
+                </h3>
+
+                <p class="text-sm leading-7 text-gray-500">
+                  We test functionality, responsiveness, performance and make
+                  necessary refinements before launch.
+                </p>
+
+                <div class="mt-7 flex items-center gap-2">
+                  <span class="h-1.5 w-8 rounded-full bg-[#E9952D]"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                </div>
+              </article>
+
+              <!-- Step 05 -->
+              <article
+                class="group relative rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+              >
+                <div
+                  class="relative z-10 mb-8 flex items-center justify-between"
+                >
+                  <span class="text-sm font-bold tracking-wider text-gray-400">
+                    STEP 05
+                  </span>
+
+                  <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7055FF] text-white shadow-lg shadow-[#7055FF]/20 transition-transform duration-300 group-hover:rotate-6"
+                  >
+                    <svg
+                      class="h-7 w-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 3v12m-5-5 5 5 5-5M5 17v3h14v-3"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold text-gray-950">
+                  Launch & Support
+                </h3>
+
+                <p class="text-sm leading-7 text-gray-500">
+                  We deploy your solution, assist with the launch and provide
+                  agreed post-launch support.
+                </p>
+
+                <div class="mt-7 flex items-center gap-2">
+                  <span class="h-1.5 w-8 rounded-full bg-[#7055FF]"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                  <span class="h-1.5 w-2 rounded-full bg-gray-200"></span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Trust / Reassurance Strip -->
+          <div
+            class="mt-12 grid grid-cols-1 gap-4 rounded-3xl border border-gray-200 bg-white p-6 sm:grid-cols-3 sm:p-8"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#7055FF]/10 text-[#7055FF]"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="m9 12 2 2 4-4"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-950">Clear Communication</h3>
+                <p class="mt-1 text-sm text-gray-500">
+                  Stay informed at every stage.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FFD900]/20 text-gray-900"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                  <path
+                    d="M12 7v5l3 2"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-950">Defined Timelines</h3>
+                <p class="mt-1 text-sm text-gray-500">
+                  Know what happens next.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E9952D]/10 text-[#E9952D]"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3v18m-6-6 6 6 6-6"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-950">
+                  Quality-Focused Delivery
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">
+                  Built around your requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conversion CTA -->
+          <div
+            class="relative mt-16 overflow-hidden rounded-[2rem] bg-[#7055FF] px-7 py-12 sm:px-12 sm:py-14 lg:px-16"
+          >
+            <!-- Decorative Shapes -->
+            <div
+              aria-hidden="true"
+              class="pointer-events-none absolute -right-16 -top-24 h-64 w-64 rounded-full border-[35px] border-white/10"
+            ></div>
+
+            <div
+              aria-hidden="true"
+              class="pointer-events-none absolute bottom-[-70px] right-[28%] h-36 w-36 rounded-full bg-[#FFD900]"
+            ></div>
+
+            <div
+              aria-hidden="true"
+              class="pointer-events-none absolute right-[12%] top-10 h-5 w-5 rounded-full bg-[#E9952D]"
+            ></div>
+
+            <div
+              class="relative z-10 flex flex-col items-start justify-between gap-9 lg:flex-row lg:items-center"
+            >
+              <div class="max-w-2xl">
+                <span
+                  class="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-white/75"
+                >
+                  <span class="h-2 w-2 rounded-full bg-[#FFD900]"></span>
+                  YOUR NEXT BIG IDEA STARTS HERE
+                </span>
+
+                <h3
+                  class="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
+                >
+                  Have a Project in Mind?
+                  <span class="text-[#FFD900]">Let's Make It Happen.</span>
+                </h3>
+
+                <p class="mt-5 max-w-xl text-base leading-8 text-white/75">
+                  Whether you need a website, custom software, mobile
+                  application or AI solution, let's discuss how we can bring
+                  your vision to life.
+                </p>
+              </div>
+
+              <div
+                class="relative flex w-full shrink-0 flex-col gap-3 sm:w-auto"
+              >
+                <a
+                  href="#contact"
+                  class="inline-flex items-center justify-center gap-3 rounded-full bg-[#FFD900] px-8 py-4 font-bold text-gray-950 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+                >
+                  Start Your Project
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+
+                <p class="text-center text-xs font-medium text-white/70">
+                  Tell us what you have in mind.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries We Serve Section -->
+      <section
+        id="industries"
+        class="relative overflow-hidden bg-[#F8F8FA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+        aria-labelledby="industries-heading"
+      >
+        <div class="relative mx-auto max-w-7xl">
+          <!-- Decorative Elements -->
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -left-24 top-20 h-64 w-64 rounded-full bg-[#7055FF]/10 blur-3xl"
+          ></div>
+
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-20 bottom-10 h-56 w-56 rounded-full bg-[#FFD900]/20 blur-3xl"
+          ></div>
+
+          <!-- Section Header -->
+          <header
+            class="relative mb-14 flex flex-col gap-7 lg:mb-16 lg:flex-row lg:items-end lg:justify-between"
+          >
+            <div class="max-w-3xl">
+              <div
+                class="mb-6 inline-flex items-center gap-3 rounded-full bg-[#E9E9ED] px-4 py-2"
+              >
+                <span class="h-3 w-3 rounded-full bg-[#FFD900]"></span>
+
+                <span class="text-sm font-semibold text-gray-900">
+                  INDUSTRIES WE SERVE
+                </span>
+              </div>
+
+              <h2
+                id="industries-heading"
+                class="text-4xl font-bold leading-[1.12] tracking-tight text-black sm:text-5xl lg:text-6xl"
+              >
+                Technology Solutions
+                <span class="text-[#7055FF]">For Every Industry.</span>
+              </h2>
+            </div>
+
+            <div class="max-w-md lg:pb-2">
+              <p class="text-base leading-8 text-gray-500 sm:text-lg">
+                Every industry has unique challenges. We build tailored
+                websites, applications and digital solutions that help
+                businesses move forward.
+              </p>
+            </div>
+          </header>
+
+          <!-- Industry Grid -->
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- Industry 01: Healthcare -->
+            <article
+              class="group relative flex min-h-[290px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+            >
+              <div class="mb-9 flex items-center justify-between">
+                <span class="text-sm font-bold tracking-wider text-gray-400">
+                  01 / 08
+                </span>
+
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-all duration-300 group-hover:bg-[#7055FF] group-hover:text-white"
+                >
+                  <svg
+                    class="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12 9v6m-3-3h6"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">Healthcare</h3>
+
+              <p class="mb-6 flex-1 text-sm leading-7 text-gray-500">
+                Digital solutions for clinics, hospitals, healthcare providers
+                and medical businesses, including appointment and patient
+                management systems.
+              </p>
+
+              <a
+                href="/industries/healthcare/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#7055FF]"
+                aria-label="Explore healthcare development solutions"
+              >
+                Explore Industry <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Industry 02: Education -->
+            <article
+              class="group relative flex min-h-[290px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+            >
+              <div class="mb-9 flex items-center justify-between">
+                <span class="text-sm font-bold tracking-wider text-gray-400">
+                  02 / 08
+                </span>
+
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FFD900]/20 text-gray-900 transition-all duration-300 group-hover:bg-[#FFD900]"
+                >
+                  <svg
+                    class="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="m3 9 9-5 9 5-9 5-9-5Z"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7 11.2v5.3c3.2 2.5 6.8 2.5 10 0v-5.3M21 9v6"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">Education</h3>
+
+              <p class="mb-6 flex-1 text-sm leading-7 text-gray-500">
+                Websites, learning platforms, student portals, coaching
+                institute management systems and digital solutions for
+                educational institutions.
+              </p>
+
+              <a
+                href="/industries/education/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#E9952D]"
+                aria-label="Explore education technology solutions"
+              >
+                Explore Industry <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Industry 03: Real Estate -->
+            <article
+              class="group relative flex min-h-[290px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+            >
+              <div class="mb-9 flex items-center justify-between">
+                <span class="text-sm font-bold tracking-wider text-gray-400">
+                  03 / 08
+                </span>
+
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-all duration-300 group-hover:bg-[#7055FF] group-hover:text-white"
+                >
+                  <svg
+                    class="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 21V9l9-6 9 6v12H3Z"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 21v-7h6v7M7 10h2m6 0h2"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">Real Estate</h3>
+
+              <p class="mb-6 flex-1 text-sm leading-7 text-gray-500">
+                Property listing websites, real estate portals, lead management
+                systems and digital platforms for property businesses.
+              </p>
+
+              <a
+                href="/industries/real-estate/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#7055FF]"
+                aria-label="Explore real estate technology solutions"
+              >
+                Explore Industry <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Industry 04: Retail -->
+            <article
+              class="group relative flex min-h-[290px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+            >
+              <div class="mb-9 flex items-center justify-between">
+                <span class="text-sm font-bold tracking-wider text-gray-400">
+                  04 / 08
+                </span>
+
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E9952D]/10 text-[#E9952D] transition-all duration-300 group-hover:bg-[#E9952D] group-hover:text-white"
+                >
+                  <svg
+                    class="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 4h2l2 11h11l3-8H6"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="9" cy="19" r="1.5" stroke-width="1.8" />
+                    <circle cx="17" cy="19" r="1.5" stroke-width="1.8" />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Retail & E-commerce
+              </h3>
+
+              <p class="mb-6 flex-1 text-sm leading-7 text-gray-500">
+                Online stores, shopping platforms, inventory management, payment
+                integrations and digital retail experiences.
+              </p>
+
+              <a
+                href="/industries/retail-ecommerce/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#E9952D]"
+                aria-label="Explore retail and ecommerce solutions"
+              >
+                Explore Industry <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Industry 05: Finance -->
+            <article
+              class="group relative flex min-h-[290px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+            >
+              <div class="mb-9 flex items-center justify-between">
+                <span class="text-sm font-bold tracking-wider text-gray-400">
+                  05 / 08
+                </span>
+
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E9952D]/10 text-[#E9952D] transition-all duration-300 group-hover:bg-[#E9952D] group-hover:text-white"
+                >
+                  <svg
+                    class="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3"
+                      y="5"
+                      width="18"
+                      height="14"
+                      rx="2"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M3 10h18m-13 5h4"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Finance & Professional Services
+              </h3>
+
+              <p class="mb-6 flex-1 text-sm leading-7 text-gray-500">
+                Business portals, financial dashboards, client management
+                platforms and digital solutions for professional service
+                providers.
+              </p>
+
+              <a
+                href="/industries/finance-professional-services/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#E9952D]"
+                aria-label="Explore finance and professional services solutions"
+              >
+                Explore Industry <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Industry 06: Travel -->
+            <article
+              class="group relative flex min-h-[290px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+            >
+              <div class="mb-9 flex items-center justify-between">
+                <span class="text-sm font-bold tracking-wider text-gray-400">
+                  06 / 08
+                </span>
+
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-all duration-300 group-hover:bg-[#7055FF] group-hover:text-white"
+                >
+                  <svg
+                    class="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 17h18l-2-8H5l-2 8Z"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6 9 8 4h8l2 5M7 17v3m10-3v3M3 13h18"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Travel & Hospitality
+              </h3>
+
+              <p class="mb-6 flex-1 text-sm leading-7 text-gray-500">
+                Hotel websites, booking platforms, travel portals, reservation
+                systems and hospitality management solutions.
+              </p>
+
+              <a
+                href="/industries/travel-hospitality/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#7055FF]"
+                aria-label="Explore travel and hospitality solutions"
+              >
+                Explore Industry <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Industry 07: Logistics -->
+            <article
+              class="group relative flex min-h-[290px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10"
+            >
+              <div class="mb-9 flex items-center justify-between">
+                <span class="text-sm font-bold tracking-wider text-gray-400">
+                  07 / 08
+                </span>
+
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7055FF]/10 text-[#7055FF] transition-all duration-300 group-hover:bg-[#7055FF] group-hover:text-white"
+                >
+                  <svg
+                    class="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 6h11v12H3zM14 10h4l3 4v4h-7"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="7.5" cy="19" r="2" stroke-width="1.8" />
+                    <circle cx="17.5" cy="19" r="2" stroke-width="1.8" />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Logistics & Transportation
+              </h3>
+
+              <p class="mb-6 flex-1 text-sm leading-7 text-gray-500">
+                Logistics portals, fleet management, shipment tracking and
+                custom systems to streamline business operations.
+              </p>
+
+              <a
+                href="/industries/logistics-transportation/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#7055FF]"
+                aria-label="Explore logistics and transportation solutions"
+              >
+                Explore Industry <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- Industry 08: Startups -->
+            <article
+              class="group relative flex min-h-[290px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10"
+            >
+              <div class="mb-9 flex items-center justify-between">
+                <span class="text-sm font-bold tracking-wider text-gray-400">
+                  08 / 08
+                </span>
+
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FFD900]/20 text-gray-900 transition-all duration-300 group-hover:bg-[#FFD900]"
+                >
+                  <svg
+                    class="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 3 14.5 9.5 21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 class="mb-3 text-xl font-bold text-gray-950">
+                Startups & Technology
+              </h3>
+
+              <p class="mb-6 flex-1 text-sm leading-7 text-gray-500">
+                MVP development, SaaS platforms, custom applications and
+                scalable technology solutions for growing startups.
+              </p>
+
+              <a
+                href="/industries/startups-technology/"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-all group-hover:gap-4 group-hover:text-[#E9952D]"
+                aria-label="Explore startup and technology solutions"
+              >
+                Explore Industry <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div
+            class="relative mt-12 overflow-hidden rounded-[2rem] bg-[#171421] px-7 py-12 sm:px-12 sm:py-14 lg:px-16"
+          >
+            <!-- Decorative Shapes -->
+            <div
+              aria-hidden="true"
+              class="pointer-events-none absolute -right-16 -top-24 h-64 w-64 rounded-full border-[35px] border-[#7055FF]/30"
+            ></div>
+
+            <div
+              aria-hidden="true"
+              class="pointer-events-none absolute bottom-[-65px] right-[25%] h-36 w-36 rounded-full bg-[#FFD900]"
+            ></div>
+
+            <div
+              class="relative z-10 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center"
+            >
+              <div class="max-w-2xl">
+                <span
+                  class="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-white/60"
+                >
+                  <span class="h-2 w-2 rounded-full bg-[#FFD900]"></span>
+                  YOUR INDUSTRY. OUR EXPERTISE.
+                </span>
+
+                <h3
+                  class="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
+                >
+                  Have a Unique Business Idea?
+                  <span class="text-[#FFD900]">Let's Build It.</span>
+                </h3>
+
+                <p class="mt-5 max-w-xl text-base leading-8 text-white/65">
+                  Don't see your industry listed? Tell us about your business
+                  and let's explore the right digital solution for your
+                  requirements.
+                </p>
+              </div>
+
+              <a
+                href="#contact"
+                class="relative z-10 inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-[#FFD900] px-8 py-4 font-bold text-gray-950 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+              >
+                Discuss Your Project
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section
+        id="testimonials"
+        class="relative overflow-hidden bg-[#F8F8FA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+        aria-labelledby="testimonials-heading"
+      >
+        <div class="relative mx-auto max-w-7xl">
+          <!-- Decorative Elements -->
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -left-20 top-20 h-56 w-56 rounded-full bg-[#7055FF]/10 blur-3xl"
+          ></div>
+
+          <!-- Section Header -->
+          <header
+            class="mb-14 flex flex-col gap-7 lg:mb-16 lg:flex-row lg:items-end lg:justify-between"
+          >
+            <div class="max-w-3xl">
+              <div
+                class="mb-6 inline-flex items-center gap-3 rounded-full bg-[#E9E9ED] px-4 py-2"
+              >
+                <span class="h-3 w-3 rounded-full bg-[#FFD900]"></span>
+
+                <span class="text-sm font-semibold text-gray-900">
+                  CLIENT TESTIMONIALS
+                </span>
+              </div>
+
+              <h2
+                id="testimonials-heading"
+                class="text-4xl font-bold leading-[1.12] tracking-tight text-black sm:text-5xl lg:text-6xl"
+              >
+                Good Work.
+                <span class="text-[#7055FF]">Real Relationships.</span>
+              </h2>
+            </div>
+
+            <p
+              class="max-w-md text-base leading-8 text-gray-500 sm:text-lg lg:pb-2"
+            >
+              Every project starts with an idea and a conversation. We believe
+              great partnerships are built through communication, collaboration
+              and quality work.
+            </p>
+          </header>
+
+          <!-- Testimonial Grid -->
+          <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            <!-- Featured Testimonial -->
+            <article
+              class="relative flex min-h-[390px] flex-col justify-between overflow-hidden rounded-[2rem] bg-[#7055FF] p-8 sm:p-10 lg:row-span-2"
+            >
+              <!-- Decorative Elements -->
+              <div
+                aria-hidden="true"
+                class="pointer-events-none absolute -right-14 -top-14 h-56 w-56 rounded-full border-[30px] border-white/10"
+              ></div>
+
+              <div
+                aria-hidden="true"
+                class="pointer-events-none absolute bottom-12 right-10 text-9xl font-serif text-white/10"
+              >
+                ”
+              </div>
+
+              <div class="relative z-10">
+                <div class="mb-9 flex items-center justify-between">
+                  <span
+                    class="rounded-full bg-white/15 px-4 py-2 text-xs font-bold tracking-wider text-white"
+                  >
+                    FEATURED FEEDBACK
+                  </span>
+
+                  <svg
+                    class="h-10 w-10 text-[#FFD900]"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6.2 17.5c-2 0-3.2-1.3-3.2-3.5 0-4 2.1-7.1 6.2-8.8l.9 1.6c-2.2 1-3.4 2.4-3.8 4.1.3-.1.6-.2 1-.2 1.9 0 3.2 1.3 3.2 3.3 0 2.1-1.4 3.5-4.3 3.5Zm10.6 0c-2 0-3.2-1.3-3.2-3.5 0-4 2.1-7.1 6.2-8.8l.9 1.6c-2.2 1-3.4 2.4-3.8 4.1.3-.1.6-.2 1-.2 1.9 0 3.2 1.3 3.2 3.3 0 2.1-1.4 3.5-4.3 3.5Z"
+                    />
+                  </svg>
+                </div>
+
+                <blockquote
+                  class="max-w-xl text-2xl font-semibold leading-relaxed text-white sm:text-3xl"
+                >
+                  "Your real client's words about their experience working with
+                  your agency will go here."
+                </blockquote>
+
+                <p class="mt-6 max-w-lg text-sm leading-7 text-white/70">
+                  Replace this with an approved client testimonial describing
+                  the project, collaboration and actual experience.
+                </p>
+              </div>
+
+              <footer
+                class="relative z-10 mt-10 flex items-center gap-4 border-t border-white/20 pt-6"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FFD900] text-lg font-bold text-gray-950"
+                >
+                  C
+                </div>
+
+                <div>
+                  <cite class="not-italic font-bold text-white">
+                    [Client Name]
+                  </cite>
+
+                  <p class="mt-1 text-sm text-white/65">
+                    [Designation] · [Company]
+                  </p>
+                </div>
+              </footer>
+            </article>
+
+            <!-- Testimonial 02 -->
+            <article
+              class="group flex min-h-[245px] flex-col justify-between rounded-[2rem] border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#7055FF]/40 hover:shadow-xl hover:shadow-[#7055FF]/10 sm:p-8"
+            >
+              <div>
+                <div class="mb-6 flex items-center justify-between">
+                  <span class="text-xs font-bold tracking-wider text-gray-400">
+                    CLIENT FEEDBACK
+                  </span>
+
+                  <span class="text-4xl font-serif leading-none text-[#7055FF]">
+                    ”
+                  </span>
+                </div>
+
+                <blockquote class="text-lg font-medium leading-8 text-gray-700">
+                  "Add genuine feedback about the website design, development
+                  quality and overall project experience."
+                </blockquote>
+              </div>
+
+              <footer
+                class="mt-8 flex items-center gap-3 border-t border-gray-100 pt-5"
+              >
+                <div
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFD900]/30 font-bold text-gray-900"
+                >
+                  C
+                </div>
+
+                <div>
+                  <cite class="not-italic text-sm font-bold text-gray-950">
+                    [Client Name]
+                  </cite>
+
+                  <p class="mt-1 text-xs text-gray-500">
+                    [Business / Industry]
+                  </p>
+                </div>
+              </footer>
+            </article>
+
+            <!-- Testimonial 03 -->
+            <article
+              class="group flex min-h-[245px] flex-col justify-between rounded-[2rem] border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#E9952D]/40 hover:shadow-xl hover:shadow-[#E9952D]/10 sm:p-8"
+            >
+              <div>
+                <div class="mb-6 flex items-center justify-between">
+                  <span class="text-xs font-bold tracking-wider text-gray-400">
+                    CLIENT FEEDBACK
+                  </span>
+
+                  <span class="text-4xl font-serif leading-none text-[#E9952D]">
+                    ”
+                  </span>
+                </div>
+
+                <blockquote class="text-lg font-medium leading-8 text-gray-700">
+                  "Add genuine feedback about communication, understanding
+                  business requirements and delivering the agreed project."
+                </blockquote>
+              </div>
+
+              <footer
+                class="mt-8 flex items-center gap-3 border-t border-gray-100 pt-5"
+              >
+                <div
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-[#7055FF]/10 font-bold text-[#7055FF]"
+                >
+                  C
+                </div>
+
+                <div>
+                  <cite class="not-italic text-sm font-bold text-gray-950">
+                    [Client Name]
+                  </cite>
+
+                  <p class="mt-1 text-xs text-gray-500">
+                    [Business / Industry]
+                  </p>
+                </div>
+              </footer>
+            </article>
+          </div>
+
+          <!-- Bottom Trust Message -->
+          <div
+            class="mt-10 flex flex-col items-center justify-between gap-5 rounded-3xl border border-gray-200 bg-white p-7 sm:flex-row sm:p-9"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#FFD900]/25 text-gray-950"
+              >
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3v18m-7-5 7 5 7-5"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-gray-950">
+                  Your Project Could Be Our Next Success Story.
+                </h3>
+
+                <p class="mt-1 text-sm leading-6 text-gray-500">
+                  Let's create something meaningful for your business.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="#contact"
+              class="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-full bg-[#7055FF] px-7 py-4 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#5D43E8] hover:shadow-lg hover:shadow-[#7055FF]/20 sm:w-auto"
+            >
+              Start Your Project
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA Section -->
+      <section
+        id="final-cta"
+        class="relative overflow-hidden bg-[#F8F8FA] px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+        aria-labelledby="final-cta-heading"
+      >
+        <div class="mx-auto max-w-7xl">
+          <!-- CTA Main Card -->
+          <div
+            class="relative isolate overflow-hidden rounded-[2rem] bg-[#7055FF] px-6 py-16 text-center shadow-2xl shadow-[#7055FF]/20 sm:px-12 sm:py-20 lg:px-20 lg:py-24"
+          >
+            <!-- Background Decorations -->
+            <div
+              class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full border-[45px] border-white/10"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full border-[50px] border-[#FFD900]/15"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="pointer-events-none absolute right-[15%] top-[25%] h-4 w-4 rounded-full bg-[#FFD900]"
+              aria-hidden="true"
+            ></div>
+
+            <div
+              class="pointer-events-none absolute bottom-[20%] left-[18%] h-3 w-3 rounded-full bg-white/70"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Content -->
+            <div class="relative z-10 mx-auto max-w-4xl">
+              <!-- Badge -->
+              <span
+                class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm"
+              >
+                <span class="h-2 w-2 rounded-full bg-[#FFD900]"></span>
+                Let's Build Something Great
+              </span>
+
+              <!-- Heading -->
+              <h2
+                id="final-cta-heading"
+                class="mt-7 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-6xl"
+              >
+                Ready to Take Your
+                <span class="text-[#FFD900]">Business</span>
+                to the Next Level?
+              </h2>
+
+              <!-- Description -->
+              <p
+                class="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg"
+              >
+                Whether you need a professional website, a powerful web
+                application, or a complete digital solution, let's turn your
+                ideas into reality.
+              </p>
+
+              <!-- CTA Buttons -->
+              <div
+                class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+              >
+                <!-- Primary CTA -->
+                <a
+                  href="#contact"
+                  class="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#FFD900] px-8 py-4 text-base font-bold text-[#171717] shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:bg-white sm:w-auto"
+                >
+                  Start Your Project
+
+                  <svg
+                    class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+
+                <!-- Secondary CTA -->
+                <a
+                  href="#contact"
+                  class="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/40 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#7055FF] sm:w-auto"
+                >
+                  Discuss Your Idea
+
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Trust Message -->
+              <div
+                class="mt-12 flex flex-wrap items-center justify-center gap-x-7 gap-y-4 border-t border-white/20 pt-8"
+              >
+                <div
+                  class="flex items-center gap-2 text-sm font-medium text-white/90"
+                >
+                  <svg
+                    class="h-5 w-5 text-[#FFD900]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                  Tailored Digital Solutions
+                </div>
+
+                <div
+                  class="flex items-center gap-2 text-sm font-medium text-white/90"
+                >
+                  <svg
+                    class="h-5 w-5 text-[#FFD900]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                  Business-Focused Approach
+                </div>
+
+                <div
+                  class="flex items-center gap-2 text-sm font-medium text-white/90"
+                >
+                  <svg
+                    class="h-5 w-5 text-[#FFD900]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                  India & Global Clients
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="bg-[#F8F8FA] px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+        aria-labelledby="contact-heading"
+      >
+        <div class="mx-auto max-w-7xl">
+          <!-- Section Header -->
+          <header class="mx-auto mb-14 max-w-3xl text-center">
+            <span
+              class="mb-4 inline-flex items-center gap-2 rounded-full border border-[#7055FF]/20 bg-[#7055FF]/10 px-4 py-2 text-sm font-semibold text-[#7055FF]"
+            >
+              <span class="h-2 w-2 rounded-full bg-[#7055FF]"></span>
+              Get In Touch
+            </span>
+
+            <h2
+              id="contact-heading"
+              class="text-3xl font-bold tracking-tight text-[#171717] sm:text-4xl lg:text-5xl"
+            >
+              Let's Talk About
+              <span class="text-[#7055FF]">Your Project.</span>
+            </h2>
+
+            <p
+              class="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg"
+            >
+              Have an idea or looking for the right digital solution? Tell us
+              about your project, and let's explore how we can help your
+              business grow.
+            </p>
+          </header>
+
+          <!-- Contact Layout -->
+          <div
+            class="mx-auto grid max-w-6xl grid-cols-1 items-start gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12"
+          >
+            <!-- Left: Contact Information -->
+            <aside
+              class="rounded-3xl bg-[#7055FF] p-7 text-white shadow-xl shadow-[#7055FF]/10 sm:p-9"
+            >
+              <span
+                class="text-sm font-semibold uppercase tracking-wider text-white/70"
+              >
+                Contact Information
+              </span>
+
+              <h3 class="mt-5 text-3xl font-bold leading-tight">
+                Let's make your next big idea happen.
+              </h3>
+
+              <p class="mt-4 text-sm leading-7 text-white/80 sm:text-base">
+                Share your requirements with us. Whether you're starting a new
+                business or improving an existing one, we're ready to discuss
+                your project.
+              </p>
+
+              <!-- Contact Details -->
+              <div class="mt-10 space-y-6">
+                <!-- Email -->
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <path d="m3 7 9 6 9-6" />
+                    </svg>
+                  </div>
+
+                  <div>
+                    <p class="text-sm text-white/60">Email Us</p>
+                    <!-- Replace with your actual business email -->
+                    <a
+                      href="mailto:hello@yourdomain.com"
+                      class="mt-1 block break-all font-semibold transition hover:text-[#FFD900]"
+                    >
+                      hello@yourdomain.com
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.84.58 2.8.7A2 2 0 0 1 22 16.92z"
+                      />
+                    </svg>
+                  </div>
+
+                  <div>
+                    <p class="text-sm text-white/60">Call Us</p>
+                    <!-- Replace with your actual phone number -->
+                    <a
+                      href="tel:+910000000000"
+                      class="mt-1 block font-semibold transition hover:text-[#FFD900]"
+                    >
+                      +91 00000 00000
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Location -->
+                <div class="flex items-start gap-4">
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"
+                      />
+                      <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                  </div>
+
+                  <div>
+                    <p class="text-sm text-white/60">Working Worldwide</p>
+                    <p class="mt-1 font-semibold">
+                      India & International Clients
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="my-9 border-t border-white/20"></div>
+
+              <!-- WhatsApp CTA -->
+              <div>
+                <h4 class="font-bold">Prefer a quick conversation?</h4>
+
+                <p class="mt-2 text-sm leading-6 text-white/70">
+                  Reach out on WhatsApp and tell us about your project.
+                </p>
+
+                <!-- Replace 910000000000 with your WhatsApp number -->
+                <a
+                  href="https://wa.me/910000000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-5 inline-flex items-center gap-3 rounded-full bg-[#FFD900] px-6 py-3.5 text-sm font-bold text-[#171717] transition hover:-translate-y-1 hover:bg-white"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.57 0 11.91-5.34 11.92-11.91a11.85 11.85 0 0 0-3.48-8.43ZM12.08 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.38a9.87 9.87 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.91-9.9a9.84 9.84 0 0 1 7.01 2.9 9.84 9.84 0 0 1 2.9 7.01c0 5.46-4.45 9.9-9.92 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.3 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"
+                    />
+                  </svg>
+                  Chat on WhatsApp
+                </a>
+              </div>
+            </aside>
+
+            <!-- Right: Contact Form -->
+            <div
+              class="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-9"
+            >
+              <div class="mb-8">
+                <h3 class="text-2xl font-bold text-[#171717] sm:text-3xl">
+                  Tell Us About Your Project
+                </h3>
+
+                <p class="mt-2 text-sm leading-6 text-gray-500">
+                  Fill out the form below and we'll get back to you.
+                </p>
+              </div>
+
+              <!--
+          IMPORTANT:
+          This form needs a backend endpoint to actually send enquiries.
+          Replace action with your PHP/API endpoint.
+        -->
+              <form
+                id="contact-form"
+                action="/contact.php"
+                method="POST"
+                class="space-y-5"
+              >
+                <!-- Name & Email -->
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div>
+                    <label
+                      for="contact-name"
+                      class="mb-2 block text-sm font-semibold text-[#171717]"
+                    >
+                      Full Name <span class="text-red-500">*</span>
+                    </label>
+
+                    <input
+                      type="text"
+                      id="contact-name"
+                      name="name"
+                      placeholder="Enter your name"
+                      autocomplete="name"
+                      required
+                      minlength="2"
+                      class="w-full rounded-xl border border-gray-200 bg-[#F8F8FA] px-4 py-3.5 text-sm text-[#171717] outline-none transition placeholder:text-gray-400 focus:border-[#7055FF] focus:bg-white focus:ring-4 focus:ring-[#7055FF]/10"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="contact-email"
+                      class="mb-2 block text-sm font-semibold text-[#171717]"
+                    >
+                      Email Address <span class="text-red-500">*</span>
+                    </label>
+
+                    <input
+                      type="email"
+                      id="contact-email"
+                      name="email"
+                      placeholder="you@example.com"
+                      autocomplete="email"
+                      required
+                      class="w-full rounded-xl border border-gray-200 bg-[#F8F8FA] px-4 py-3.5 text-sm text-[#171717] outline-none transition placeholder:text-gray-400 focus:border-[#7055FF] focus:bg-white focus:ring-4 focus:ring-[#7055FF]/10"
+                    />
+                  </div>
+                </div>
+
+                <!-- Country & Phone -->
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div>
+                    <label
+                      for="contact-country"
+                      class="mb-2 block text-sm font-semibold text-[#171717]"
+                    >
+                      Country <span class="text-red-500">*</span>
+                    </label>
+
+                    <select
+                      id="contact-country"
+                      name="country"
+                      required
+                      class="w-full rounded-xl border border-gray-200 bg-[#F8F8FA] px-4 py-3.5 text-sm text-[#171717] outline-none transition focus:border-[#7055FF] focus:bg-white focus:ring-4 focus:ring-[#7055FF]/10"
+                    >
+                      <option value="">Select country</option>
+                      <option value="India">India</option>
+                      <option value="United Arab Emirates">
+                        United Arab Emirates
+                      </option>
+                      <option value="United States">United States</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      for="contact-phone"
+                      class="mb-2 block text-sm font-semibold text-[#171717]"
+                    >
+                      Phone / WhatsApp
+                    </label>
+
+                    <input
+                      type="tel"
+                      id="contact-phone"
+                      name="phone"
+                      placeholder="+91 00000 00000"
+                      autocomplete="tel"
+                      class="w-full rounded-xl border border-gray-200 bg-[#F8F8FA] px-4 py-3.5 text-sm text-[#171717] outline-none transition placeholder:text-gray-400 focus:border-[#7055FF] focus:bg-white focus:ring-4 focus:ring-[#7055FF]/10"
+                    />
+                  </div>
+                </div>
+
+                <!-- Service -->
+                <div>
+                  <label
+                    for="contact-service"
+                    class="mb-2 block text-sm font-semibold text-[#171717]"
+                  >
+                    What Service Do You Need?
+                    <span class="text-red-500">*</span>
+                  </label>
+
+                  <select
+                    id="contact-service"
+                    name="service"
+                    required
+                    class="w-full rounded-xl border border-gray-200 bg-[#F8F8FA] px-4 py-3.5 text-sm text-[#171717] outline-none transition focus:border-[#7055FF] focus:bg-white focus:ring-4 focus:ring-[#7055FF]/10"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="Website Development">
+                      Website Development
+                    </option>
+                    <option value="E-commerce Development">
+                      E-commerce Development
+                    </option>
+                    <option value="WordPress Development">
+                      WordPress Development
+                    </option>
+                    <option value="Custom Web Application">
+                      Custom Web Application
+                    </option>
+                    <option value="Backend Portal / CRM / ERP">
+                      Backend Portal / CRM / ERP
+                    </option>
+                    <option value="SEO & Optimization">
+                      SEO & Optimization
+                    </option>
+                    <option value="Android App Development">
+                      Android App Development
+                    </option>
+                    <option value="AI Chatbot Development">
+                      AI Chatbot Development
+                    </option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Budget -->
+                <div>
+                  <label
+                    for="contact-budget"
+                    class="mb-2 block text-sm font-semibold text-[#171717]"
+                  >
+                    Estimated Project Budget
+                  </label>
+
+                  <select
+                    id="contact-budget"
+                    name="budget"
+                    class="w-full rounded-xl border border-gray-200 bg-[#F8F8FA] px-4 py-3.5 text-sm text-[#171717] outline-none transition focus:border-[#7055FF] focus:bg-white focus:ring-4 focus:ring-[#7055FF]/10"
+                  >
+                    <option value="">Select your budget (optional)</option>
+                    <option value="Below ₹25,000">Below ₹25,000</option>
+                    <option value="₹25,000 - ₹50,000">₹25,000 - ₹50,000</option>
+                    <option value="₹50,000 - ₹1,00,000">
+                      ₹50,000 - ₹1,00,000
+                    </option>
+                    <option value="₹1,00,000 - ₹3,00,000">
+                      ₹1,00,000 - ₹3,00,000
+                    </option>
+                    <option value="Above ₹3,00,000">Above ₹3,00,000</option>
+                    <option value="Not decided yet">Not decided yet</option>
+                  </select>
+                </div>
+
+                <!-- Project Details -->
+                <div>
+                  <label
+                    for="contact-message"
+                    class="mb-2 block text-sm font-semibold text-[#171717]"
+                  >
+                    Tell Us About Your Project
+                    <span class="text-red-500">*</span>
+                  </label>
+
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    minlength="10"
+                    maxlength="3000"
+                    required
+                    placeholder="Describe your project, goals, required features, or any ideas you have..."
+                    class="w-full resize-y rounded-xl border border-gray-200 bg-[#F8F8FA] px-4 py-3.5 text-sm leading-6 text-[#171717] outline-none transition placeholder:text-gray-400 focus:border-[#7055FF] focus:bg-white focus:ring-4 focus:ring-[#7055FF]/10"
+                  ></textarea>
+                </div>
+
+                <!-- Consent -->
+                <div class="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="contact-consent"
+                    name="consent"
+                    value="yes"
+                    required
+                    class="mt-1 h-4 w-4 shrink-0 accent-[#7055FF]"
+                  />
+
+                  <label
+                    for="contact-consent"
+                    class="text-xs leading-6 text-gray-500"
+                  >
+                    I agree to be contacted regarding my enquiry and understand
+                    that my information will be used to respond to my request.
+                  </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  id="contact-submit"
+                  class="group flex w-full items-center justify-center gap-3 rounded-full bg-[#7055FF] px-7 py-4 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#5B42E8] hover:shadow-lg hover:shadow-[#7055FF]/20 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  <span>Send Project Enquiry</span>
+
+                  <svg
+                    class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+
+                <p
+                  id="contact-form-status"
+                  class="hidden text-center text-sm font-medium"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+
+                <p class="text-center text-xs text-gray-400">
+                  Your project details are used to respond to your enquiry.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+     FOOTER SECTION
+========================= -->
+      <footer class="bg-[#171717] text-white">
+        <div class="mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-20">
+          <!-- Footer Main Grid -->
+          <div
+            class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:gap-10"
+          >
+            <!-- Brand Column -->
+            <div>
+              <!-- Logo -->
+              <a
+                href="#home"
+                class="inline-flex items-center gap-3"
+                aria-label="Go to homepage"
+              >
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#7055FF] text-xl font-bold text-white"
+                >
+                  A
+                </span>
+
+                <span class="text-2xl font-bold tracking-tight text-white">
+                  Your<span class="text-[#FFD900]">Agency.</span>
+                </span>
+              </a>
+
+              <!-- Description -->
+              <p class="mt-6 max-w-sm text-sm leading-7 text-gray-400">
+                We create meaningful digital experiences that help businesses
+                grow. From professional websites to custom applications, we turn
+                your ideas into powerful digital solutions.
+              </p>
+
+              <!-- Social Links -->
+              <div class="mt-7">
+                <h3 class="mb-4 text-sm font-semibold text-white">Follow Us</h3>
+
+                <ul class="flex items-center gap-3">
+                  <!-- LinkedIn -->
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 transition duration-300 hover:border-[#7055FF] hover:bg-[#7055FF] hover:text-white"
+                    >
+                      <svg
+                        class="h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.3ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V8.99h3.56v11.46ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+
+                  <!-- Instagram -->
+                  <li>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 transition duration-300 hover:border-[#7055FF] hover:bg-[#7055FF] hover:text-white"
+                    >
+                      <svg
+                        class="h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                      >
+                        <rect x="3" y="3" width="18" height="18" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="18" cy="6" r=".8" fill="currentColor" />
+                      </svg>
+                    </a>
+                  </li>
+
+                  <!-- Facebook -->
+                  <li>
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 transition duration-300 hover:border-[#7055FF] hover:bg-[#7055FF] hover:text-white"
+                    >
+                      <svg
+                        class="h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M13.4 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6v1.7H7V13h2.7v8h3.7Z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+
+                  <!-- YouTube -->
+                  <li>
+                    <a
+                      href="https://www.youtube.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                      class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 transition duration-300 hover:border-[#7055FF] hover:bg-[#7055FF] hover:text-white"
+                    >
+                      <svg
+                        class="h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Quick Navigation -->
+            <nav aria-label="Footer navigation">
+              <h3 class="mb-6 text-base font-bold text-white">Quick Links</h3>
+
+              <ul class="space-y-4 text-sm text-gray-400">
+                <li>
+                  <a href="#home" class="footer-link">Home</a>
+                </li>
+
+                <li>
+                  <a href="#about" class="footer-link">About Us</a>
+                </li>
+
+                <li>
+                  <a href="#services" class="footer-link">Our Services</a>
+                </li>
+
+                <li>
+                  <a href="#process" class="footer-link">Our Process</a>
+                </li>
+
+                <li>
+                  <a href="#industries" class="footer-link">Industries</a>
+                </li>
+
+                <li>
+                  <a href="#portfolio" class="footer-link">Our Work</a>
+                </li>
+
+                <li>
+                  <a href="#testimonials" class="footer-link">Testimonials</a>
+                </li>
+
+                <li>
+                  <a href="#faq" class="footer-link">FAQs</a>
+                </li>
+
+                <li>
+                  <a href="#contact" class="footer-link">Contact Us</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Services Navigation -->
+            <nav aria-label="Footer services">
+              <h3 class="mb-6 text-base font-bold text-white">Our Services</h3>
+
+              <ul class="space-y-4 text-sm text-gray-400">
+                <li>
+                  <a href="#services" class="footer-link">Web Development</a>
+                </li>
+
+                <li>
+                  <a href="#services" class="footer-link"
+                    >E-commerce Development</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#services" class="footer-link"
+                    >WordPress Development</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#services" class="footer-link"
+                    >Custom Web Applications</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#services" class="footer-link">Backend Portals</a>
+                </li>
+
+                <li>
+                  <a href="#services" class="footer-link">SEO & Optimization</a>
+                </li>
+
+                <li>
+                  <a href="#services" class="footer-link"
+                    >Android App Development</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#services" class="footer-link"
+                    >AI Chatbot Development</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Contact Information -->
+            <div>
+              <h3 class="mb-6 text-base font-bold text-white">Get In Touch</h3>
+
+              <p class="mb-6 text-sm leading-7 text-gray-400">
+                Have a project in mind? Let's discuss how we can help your
+                business grow.
+              </p>
+
+              <ul class="space-y-5 text-sm text-gray-400">
+                <!-- Email -->
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="mt-0.5 h-5 w-5 shrink-0 text-[#FFD900]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m3 7 9 6 9-6" />
+                  </svg>
+
+                  <a
+                    href="mailto:hello@yourdomain.com"
+                    class="break-all transition hover:text-[#FFD900]"
+                  >
+                    hello@yourdomain.com
+                  </a>
+                </li>
+
+                <!-- Phone -->
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="mt-0.5 h-5 w-5 shrink-0 text-[#FFD900]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.84.58 2.8.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+
+                  <a
+                    href="tel:+910000000000"
+                    class="transition hover:text-[#FFD900]"
+                  >
+                    +91 00000 00000
+                  </a>
+                </li>
+
+                <!-- Location -->
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="mt-0.5 h-5 w-5 shrink-0 text-[#FFD900]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                    <circle cx="12" cy="10" r="2.5" />
+                  </svg>
+
+                  <span> Serving clients in India and worldwide. </span>
+                </li>
+              </ul>
+
+              <!-- CTA Button -->
+              <a
+                href="#contact"
+                class="group mt-7 inline-flex items-center gap-3 rounded-full bg-[#FFD900] px-6 py-3.5 text-sm font-bold text-[#171717] transition duration-300 hover:-translate-y-1 hover:bg-white"
+              >
+                Start a Project
+
+                <svg
+                  class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Footer Divider -->
+          <div class="my-12 border-t border-white/10"></div>
+
+          <!-- Footer Bottom -->
+          <div
+            class="flex flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left"
+          >
+            <!-- Copyright -->
+            <p class="text-sm text-gray-500">
+              &copy; <span id="footer-year"></span>
+              <span class="font-semibold text-gray-300">YourAgency</span>. All
+              rights reserved.
+            </p>
+
+            <!-- Bottom Navigation -->
+            <nav aria-label="Footer bottom navigation">
+              <ul
+                class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-gray-500"
+              >
+                <li>
+                  <a href="#home" class="footer-link">Home</a>
+                </li>
+
+                <li>
+                  <a href="#faq" class="footer-link">FAQs</a>
+                </li>
+
+                <li>
+                  <a href="#contact" class="footer-link">Contact</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Back to Top -->
+            <a
+              href="#home"
+              aria-label="Back to top"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-[#7055FF] hover:bg-[#7055FF]"
+            >
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="m18 15-6-6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Footer Styles -->
+      <style>
+        html {
+          scroll-behavior: smooth;
+        }
+
+        .footer-link {
+          transition: color 0.25s ease;
+        }
+
+        .footer-link:hover {
+          color: #ffd900;
+        }
+
+        section[id] {
+          scroll-margin-top: 90px;
+        }
+      </style>
+
+      <!-- Footer JavaScript -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const footerYear = document.querySelector("#footer-year");
+
+          if (footerYear) {
+            footerYear.textContent = new Date().getFullYear();
+          }
+        });
+      </script>
     </main>
 
     <script type="module" src="/src/main.js"></script>

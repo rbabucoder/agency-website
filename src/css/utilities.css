@@ -5,4 +5,19 @@
     margin-inline: auto;
     padding-inline: 1rem;
   }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: #374151;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-nav-link:hover {
+    color: #7055ff;
+    background-color: #7055ff0d;
+  }
 }
