@@ -13,4 +13,25 @@
   .badge-dot {
     @apply size-5 rounded-full bg-yellow-400 shrink-0;
   }
+  .hero-form {
+    pointer-events: none;
+  }
+
+  .hero-form > div {
+    pointer-events: auto;
+  }
+
+  @media (max-width: 639px) {
+    .hero-visual {
+      min-height: 480px;
+    }
+
+    .hero-form {
+      padding: 12px;
+    }
+
+    .hero-form > div {
+      max-width: 340px;
+    }
+  }
 }
